@@ -1,0 +1,335 @@
+/* ==========================================================================
+   PRETTY CROWN BARBER & BEAUTY SALON — style.css  (Part 3)
+   All styling for the website is kept in this one external file.
+   Sections:
+   1 Reset   2 Colours   3 Base   4 Typography   5 Layout
+   6 Visual styles   7 Components (Part 3)   8 Forms   9 Animation
+   10 Responsive design
+   ========================================================================== */
+
+/* 1. RESET ---------------------------------------------------------------- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; border: none; cursor: pointer; }
+[hidden] { display: none !important; }
+
+
+/* --------------------------------------------------------------------------
+   2. COLOUR SYSTEM  (salon brand palette — "Pretty Crown")
+   Deep plum + gold + blush + ivory = premium salon feel
+   -------------------------------------------------------------------------- */
+:root {
+  --color-plum: #3b0a1f;        /* deep wine/plum - primary/header */
+  --color-plum-dark: #240613;   /* darker plum for footer/hover */
+  --color-gold: #c9a24b;        /* crown gold - accents, borders, buttons */
+  --color-gold-light: #e8d3a0;  /* light gold - hover highlight */
+  --color-blush: #f3d6d9;       /* soft blush pink - section backgrounds */
+  --color-ivory: #fdf8f4;       /* ivory - page background */
+  --color-charcoal: #2b2b2b;    /* body text */
+  --color-white: #ffffff;
+
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Poppins', Arial, Helvetica, sans-serif;
+
+  --radius: 10px;
+  --shadow-soft: 0 4px 14px rgba(59, 10, 31, 0.15);
+  --transition: 0.3s ease;
+}
+
+/* 3. BASE STYLE ----------------------------------------------------------- */
+
+html { font-size: 100%; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+  background-color: var(--color-ivory);
+}
+
+:focus-visible { outline: 3px solid var(--color-gold); outline-offset: 2px; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 1000;
+  background: var(--color-gold); color: var(--color-plum-dark);
+  padding: 0.75rem 1rem; font-weight: 700; border-radius: 0 0 var(--radius) 0;
+}
+.skip-link:focus { left: 0; }
+
+/* 4. TYPOGRAPHY ----------------------------------------------------------- */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-plum);
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+h2 { font-size: 1.9rem; margin-bottom: 1rem; padding-bottom: 0.5rem; }
+h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--color-gold); margin-top: 0.5rem; }
+h3 { font-size: 1.3rem; color: var(--color-plum-dark); margin: 0.5rem 0; }
+p { margin-bottom: 1rem; max-width: 65ch; }
+
+/* 5. LAYOUT --------------------------------------------------------------- */
+
+header { background: var(--color-plum); color: var(--color-white); padding: 2rem 1.5rem 1.5rem; text-align: center; }
+
+.brand {
+  font-family: var(--font-heading); font-size: 2.1rem; font-weight: 700;
+  letter-spacing: 0.5px; color: var(--color-white); display: inline-block;
+}
+.tagline {
+  font-family: var(--font-heading); font-style: italic; font-size: 1.1rem;
+  letter-spacing: 1px; color: var(--color-gold-light); max-width: none; margin: 0.25rem 0 0;
+}
+
+header nav ul { display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.25rem; }
+header nav ul li a {
+  display: inline-block; padding: 0.5rem 0.9rem; font-weight: 600; letter-spacing: 0.5px;
+  border-radius: var(--radius); transition: background-color var(--transition), color var(--transition);
+}
+header nav ul li a[aria-current="page"] { border-bottom: 3px solid var(--color-gold); border-radius: var(--radius) var(--radius) 0 0; }
+
+hr { border: none; border-top: 2px solid var(--color-gold); margin: 0; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.content-section { margin-bottom: 3rem; }
+
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; align-items: start; }
+
+footer { background: var(--color-plum-dark); color: var(--color-gold-light); text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem; }
+footer p { margin: 0 auto 0.5rem; max-width: none; }
+.footer-links a { text-decoration: underline; padding: 0 0.4rem; }
+
+/* 5. LAYOUT --------------------------------------------------------------- */
+header { background: var(--color-plum); color: var(--color-white); padding: 2rem 1.5rem 1.5rem; text-align: center; }
+
+.brand {
+  font-family: var(--font-heading); font-size: 2.1rem; font-weight: 700;
+  letter-spacing: 0.5px; color: var(--color-white); display: inline-block;
+}
+.tagline {
+  font-family: var(--font-heading); font-style: italic; font-size: 1.1rem;
+  letter-spacing: 1px; color: var(--color-gold-light); max-width: none; margin: 0.25rem 0 0;
+}
+
+header nav ul { display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.25rem; }
+header nav ul li a {
+  display: inline-block; padding: 0.5rem 0.9rem; font-weight: 600; letter-spacing: 0.5px;
+  border-radius: var(--radius); transition: background-color var(--transition), color var(--transition);
+}
+header nav ul li a[aria-current="page"] { border-bottom: 3px solid var(--color-gold); border-radius: var(--radius) var(--radius) 0 0; }
+
+hr { border: none; border-top: 2px solid var(--color-gold); margin: 0; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.content-section { margin-bottom: 3rem; }
+
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; align-items: start; }
+
+footer { background: var(--color-plum-dark); color: var(--color-gold-light); text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem; }
+footer p { margin: 0 auto 0.5rem; max-width: none; }
+.footer-links a { text-decoration: underline; padding: 0 0.4rem; }
+
+/* 6. VISUAL STYLES -------------------------------------------------------- */
+header nav ul li a:hover, header nav ul li a:focus { background: var(--color-gold); color: var(--color-plum-dark); }
+header nav ul li a:active { background: var(--color-gold-light); }
+
+.hero {
+  background: linear-gradient(135deg, var(--color-plum) 0%, var(--color-plum-dark) 100%);
+  color: var(--color-white); text-align: center; border-radius: var(--radius);
+  padding: 3.5rem 1.5rem; margin-bottom: 3rem; box-shadow: var(--shadow-soft); border-bottom: 4px solid var(--color-gold);
+}
+.hero h1 { color: var(--color-white); font-size: 2.6rem; }
+.hero p { margin-left: auto; margin-right: auto; }
+.hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; max-width: none; }
+
+.open-status { display: inline-block; padding: 0.4rem 1rem; border-radius: 999px; background: rgba(255, 255, 255, 0.15); font-weight: 600; }
+.open-status.is-open { background: var(--color-success); }
+.open-status:empty { display: none; }
+
+.btn {
+  display: inline-block; padding: 0.75rem 1.75rem; border-radius: var(--radius);
+  background: var(--color-gold); color: var(--color-plum-dark); font-weight: 700; letter-spacing: 0.5px;
+  box-shadow: var(--shadow-soft); transition: background-color var(--transition), transform var(--transition), color var(--transition);
+}
+.btn:hover, .btn:focus { background: var(--color-gold-light); }
+.btn:active { transform: scale(0.97); }
+.btn-outline { background: transparent; color: var(--color-white); border: 2px solid var(--color-gold); }
+.btn-outline:hover, .btn-outline:focus { background: var(--color-gold); color: var(--color-plum-dark); }
+.btn-outline-dark { background: transparent; color: var(--color-plum); border: 2px solid var(--color-plum); }
+.btn-outline-dark:hover, .btn-outline-dark:focus { background: var(--color-plum); color: var(--color-white); }
+.btn-small { padding: 0.5rem 1.1rem; font-size: 0.95rem; }
+
+article.card {
+  background: var(--color-white); border: 1px solid var(--color-gold-light); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow-soft); transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+article.card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(59, 10, 31, 0.25); border-color: var(--color-gold); }
+article.card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+article.card h3, article.card p { padding: 0 1.25rem; }
+article.card h3 { padding-top: 1rem; }
+article.card p:last-child { padding-bottom: 1.25rem; }
+.info-card { padding-top: 0.25rem; border-top: 4px solid var(--color-gold); }
+.service-card { animation: fadeUp 0.4s ease both; }
+.service-meta { font-weight: 600; color: var(--color-plum); }
+.card-actions { margin-bottom: 0; }
+.no-results { grid-column: 1 / -1; background: var(--color-blush); padding: 1.5rem; border-radius: var(--radius); }
+
+/* 7. COMPONENTS (PART 3) -------------------------------------------------- */
+
+/* Gallery + lightbox */
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.gallery-item { display: block; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow-soft); border: 2px solid var(--color-gold-light); }
+.gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.4s ease; }
+.gallery-item:hover img, .gallery-item:focus img { transform: scale(1.08); }
+
+dialog { border: none; border-radius: var(--radius); padding: 0; width: 100%; max-width: min(92vw, 560px); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); margin: auto; }
+dialog[open] { animation: fadeUp 0.3s ease; }
+dialog::backdrop { background: rgba(36, 6, 19, 0.75); }
+
+.lightbox { max-width: min(94vw, 900px); background: var(--color-plum-dark); color: var(--color-white); padding: 2.5rem 3.5rem 1.5rem; text-align: center; }
+.lightbox-img { max-height: 70vh; width: auto; max-width: 100%; margin: 0 auto; border-radius: var(--radius); }
+.lightbox-caption { margin-top: 0.75rem; color: var(--color-gold-light); }
+.lightbox button {
+  position: absolute; background: var(--color-gold); color: var(--color-plum-dark);
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; font-size: 1.2rem; font-weight: 700; line-height: 1;
+  transition: background-color var(--transition);
+}
+.lightbox button:hover, .lightbox button:focus { background: var(--color-gold-light); }
+.lightbox-close { top: 0.6rem; right: 0.6rem; }
+.lightbox-prev { left: 0.6rem; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 0.6rem; top: 50%; transform: translateY(-50%); }
+
+/* Tabs */
+.tab-list { display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 3px solid var(--color-gold); }
+.tab-list [role="tab"] {
+  padding: 0.75rem 1.4rem; background: var(--color-blush); color: var(--color-plum); font-weight: 600;
+  border-radius: var(--radius) var(--radius) 0 0; transition: background-color var(--transition), color var(--transition);
+}
+.tab-list [role="tab"]:hover { background: var(--color-gold-light); }
+.tab-list [role="tab"][aria-selected="true"] { background: var(--color-plum); color: var(--color-white); }
+.tab-panel { background: var(--color-white); border: 1px solid var(--color-gold-light); border-top: none; padding: 1.75rem; border-radius: 0 0 var(--radius) var(--radius); box-shadow: var(--shadow-soft); }
+.tab-panel:not([hidden]) { animation: fadeUp 0.35s ease; }
+
+/* Accordion */
+.accordion-item { border: 1px solid var(--color-gold-light); border-radius: var(--radius); margin-bottom: 0.75rem; background: var(--color-white); overflow: hidden; }
+.accordion-trigger {
+  width: 100%; text-align: left; padding: 1rem 1.25rem; background: var(--color-blush); color: var(--color-plum);
+  font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background-color var(--transition);
+}
+.accordion-trigger::after { content: "+"; font-size: 1.5rem; color: var(--color-plum); }
+.accordion-trigger[aria-expanded="true"]::after { content: "\2212"; }
+.accordion-trigger:hover, .accordion-trigger:focus { background: var(--color-gold-light); }
+.accordion-panel { padding: 1rem 1.25rem 0.25rem; }
+.accordion-panel:not([hidden]) { animation: fadeUp 0.3s ease; }
+
+/* Search / filter bar */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; background: var(--color-blush); border: 1px solid var(--color-gold-light); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+.filter-bar .form-field { flex: 1 1 200px; margin-bottom: 0; }
+.result-count { font-weight: 600; color: var(--color-plum); margin-bottom: 1rem; }
+
+/* Modal */
+.modal-body { padding: 0 0 1.5rem; }
+.modal-body img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.modal-body h2, .modal-body p { padding: 0 1.5rem; }
+.modal-body h2 { margin-top: 1.25rem; }
+.modal-close { position: absolute; top: 0.6rem; right: 0.6rem; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: var(--color-plum); color: var(--color-white); font-size: 1.2rem; }
+.modal-close:hover, .modal-close:focus { background: var(--color-gold); color: var(--color-plum-dark); }
+
+/* Map + contact details */
+.map { height: 380px; border-radius: var(--radius); border: 2px solid var(--color-gold); box-shadow: var(--shadow-soft); background: var(--color-blush); }
+.map-error { padding: 1.5rem; }
+.contact-details { background: var(--color-white); border: 1px solid var(--color-gold-light); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-soft); }
+.contact-details dt { font-weight: 700; color: var(--color-plum); margin-top: 0.75rem; }
+.contact-details dd a { text-decoration: underline; }
+
+/* Response / email preview panels */
+.response-panel { background: var(--color-white); border: 2px solid var(--color-gold); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-soft); margin-bottom: 2rem; max-width: 720px; }
+.response-answer { font-weight: 600; color: var(--color-plum-dark); background: var(--color-blush); padding: 1rem; border-radius: var(--radius); }
+.summary { display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1.25rem; margin-bottom: 1.25rem; }
+.summary dt { font-weight: 700; color: var(--color-plum); }
+.email-body { white-space: pre-wrap; background: var(--color-ivory); border: 1px dashed var(--color-gold); border-radius: var(--radius); padding: 1rem; margin-bottom: 1.25rem; font-family: var(--font-body); font-size: 0.95rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; max-width: none; margin-bottom: 0; }
+
+/* 8. FORMS ---------------------------------------------------------------- */
+form { background: var(--color-blush); border: 1px solid var(--color-gold-light); border-radius: var(--radius); padding: 2rem; max-width: 680px; box-shadow: var(--shadow-soft); }
+form.filter-bar { max-width: none; box-shadow: none; }
+.form-note { font-size: 0.9rem; }
+.form-field { margin-bottom: 1.25rem; }
+label, legend { display: block; font-weight: 600; color: var(--color-plum); margin-bottom: 0.4rem; }
+fieldset { border: none; padding: 0; }
+
+input, select, textarea {
+  width: 100%; padding: 0.7rem 0.9rem; font-family: var(--font-body); font-size: 1rem;
+  border: 1px solid var(--color-gold); border-radius: 6px; background: var(--color-white); color: var(--color-charcoal);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+input[type="checkbox"], input[type="radio"] { width: auto; accent-color: var(--color-plum); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--color-plum); box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.35); }
+
+.choice { display: flex; align-items: center; gap: 0.6rem; font-weight: 400; color: var(--color-charcoal); margin-bottom: 0.4rem; cursor: pointer; }
+
+.error-message { display: block; color: var(--color-error); font-size: 0.9rem; font-weight: 600; margin-top: 0.35rem; }
+.error-message:empty { display: none; }
+.has-error input, .has-error select, .has-error textarea { border-color: var(--color-error); background: #fff5f5; }
+.char-counter { display: block; text-align: right; font-size: 0.85rem; margin-top: 0.25rem; }
+.char-counter.is-over { color: var(--color-error); font-weight: 700; }
+.form-status { font-weight: 600; margin-bottom: 1rem; max-width: none; }
+.form-status.is-error { color: var(--color-error); }
+.form-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+button[type="submit"] {
+  background: var(--color-plum); color: var(--color-white); padding: 0.75rem 2rem; border-radius: var(--radius);
+  font-weight: 700; letter-spacing: 0.5px; box-shadow: var(--shadow-soft); transition: background-color var(--transition), transform var(--transition);
+}
+button[type="submit"]:hover, button[type="submit"]:focus { background: var(--color-gold); color: var(--color-plum-dark); }
+button[type="submit"]:active { transform: scale(0.97); }
+button[type="submit"]:disabled { opacity: 0.6; cursor: wait; }
+button[type="reset"] { background: transparent; color: var(--color-plum); border: 2px solid var(--color-plum); padding: 0.7rem 1.5rem; border-radius: var(--radius); font-weight: 600; }
+button[type="reset"]:hover, button[type="reset"]:focus { background: var(--color-plum); color: var(--color-white); }
+
+/* 9. ANIMATION ------------------------------------------------------------ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* 10. RESPONSIVE DESIGN --------------------------------------------------- */
+
+/* Tablet: up to 1024px */
+@media screen and (max-width: 64em) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1fr; }
+  main { padding: 2rem 1rem; }
+  .hero h1 { font-size: 2.1rem; }
+}
+
+/* Mobile: up to 600px */
+@media screen and (max-width: 37.5em) {
+  header nav ul { flex-direction: column; gap: 0.75rem; }
+  .brand { font-size: 1.6rem; }
+  .card-grid, .gallery { grid-template-columns: 1fr; }
+  h1, .hero h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  form { padding: 1.25rem; }
+  .map { height: 300px; }
+  .summary { grid-template-columns: 1fr; gap: 0.1rem; }
+  .summary dd { margin-bottom: 0.6rem; }
+  .lightbox { padding: 2.5rem 1rem 1rem; }
+  .lightbox-prev, .lightbox-next { top: auto; bottom: 0.6rem; transform: none; }
+  button[type="submit"], button[type="reset"], .actions .btn, .form-buttons button { width: 100%; }
+  .tab-list [role="tab"] { flex: 1 1 100%; border-radius: var(--radius); }
+}
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://phutimoketla.github.io/pretty-crown-salon/index.html</loc>
+        <lastmod>2026-10-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- About Us Page -->
+    <url>
+        <loc>https://phutimoketla.github.io/pretty-crown-salon/about.html</loc>
+        <lastmod>2026-10-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Services & Price List Page -->
+    <url>
+        <loc>https://phutimoketla.github.io/pretty-crown-salon/services.html</loc>
+        <lastmod>2026-10-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Enquiry & Booking Page -->
+    <url>
+        <loc>https://phutimoketla.github.io/pretty-crown-salon/enquiry.html</loc>
+        <lastmod>2026-10-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contact & Map Page -->
+    <url>
+        <loc>https://phutimoketla.github.io/pretty-crown-salon/contact.html</loc>
+        <lastmod>2026-10-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>

@@ -1,0 +1,11 @@
+# ==============================================================================
+# Pretty Crown Barber & Beauty Salon — robots.txt
+# This file tells search engines (like Google) that they are welcome to index
+# every page of your site, and points them directly to your sitemap.
+# ==============================================================================
+
+User-agent: *
+Allow: /
+
+# Sitemap location directive
+Sitemap: https://phutimoketla.github.io/pretty-crown-salon/sitemap.xml
